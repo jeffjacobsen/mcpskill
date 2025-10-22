@@ -1,0 +1,10 @@
+name: test-filesystem
+description: "Test filesystem access"
+
+downstream:
+  command: npx
+  args:
+    - "-y"
+    - "@modelcontextprotocol/server-filesystem"
+    - "/tmp"
+  env: {}

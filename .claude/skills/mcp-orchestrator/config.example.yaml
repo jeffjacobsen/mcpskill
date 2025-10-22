@@ -1,0 +1,68 @@
+# MCPSkill Configuration Example
+# Copy this file to config.yaml and customize for your use case
+
+name: filesystem-assistant
+description: "Direct access to filesystem operations via MCP"
+
+# Downstream MCP server configuration
+# This is the actual MCP server that provides the tools
+downstream:
+  command: npx  # Command to run the server
+  args:
+    - "-y"  # npx flag to auto-install if needed
+    - "@modelcontextprotocol/server-filesystem"  # MCP server package
+    - "/Users/username/Documents"  # Root directory for filesystem access
+  env: {}  # Additional environment variables for the downstream server
+
+
+# ===== OTHER COMMON CONFIGURATIONS =====
+
+# --- SQLite Database ---
+# name: database-assistant
+# description: "Direct access to SQLite database operations"
+# downstream:
+#   command: npx
+#   args:
+#     - "-y"
+#     - "@modelcontextprotocol/server-sqlite"
+#     - "/path/to/database.db"
+#   env: {}
+
+# --- GitHub Integration ---
+# name: github-assistant
+# description: "Direct access to GitHub repository operations"
+# downstream:
+#   command: npx
+#   args:
+#     - "-y"
+#     - "@modelcontextprotocol/server-github"
+#   env:
+#     GITHUB_TOKEN: ${GITHUB_TOKEN}  # Token loaded from environment
+
+# --- Custom Python MCP Server ---
+# name: custom-assistant
+# description: "Direct access to custom MCP tools"
+# downstream:
+#   command: python
+#   args:
+#     - "-m"
+#     - "my_mcp_server"
+#   env:
+#     API_KEY: ${MY_API_KEY}
+
+# --- PostgreSQL Database ---
+# name: postgres-assistant
+# description: "Direct access to PostgreSQL database"
+# downstream:
+#   command: npx
+#   args:
+#     - "-y"
+#     - "@modelcontextprotocol/server-postgres"
+#     - "postgresql://user:pass@localhost/dbname"
+#   env: {}
+
+# Configuration Notes:
+# - No LLM configuration is needed (MCPSkill provides direct access)
+# - Just specify the downstream MCP server command and args
+# - Environment variables use ${VAR_NAME} syntax and are loaded from your shell
+# - The 'name' and 'description' help Claude understand what this skill does

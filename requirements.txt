@@ -1,0 +1,14 @@
+# MCProxy dependencies
+# Install with: pip install -r requirements.txt
+
+mcp>=0.9.0
+anthropic>=0.40.0
+openai>=1.0.0
+pydantic>=2.0.0
+pyyaml>=6.0
+aiofiles>=23.0.0
+rich>=13.0.0
+typer>=0.9.0
+
+# Development dependencies (optional)
+# Install with: pip install -r requirements.txt -r requirements-dev.txt
