@@ -48,7 +48,6 @@ MCPSkill provides a simple bridge between Claude Code's skill system and MCP ser
 
 ❌ **Don't use MCPSkill when:**
 - You need complex multi-tool orchestration logic
-- You want an MCP server for Claude Desktop (use MCProxy instead)
 - You need intermediate LLM reasoning for tool selection
 
 ## Installation
@@ -278,12 +277,7 @@ mypy src/
 
 ## Contributing
 
-Contributions welcome! Please:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
+This is a simple example project to help you get started. Feel free to fork and modify for your own needs!
 
 ## Resources
 
@@ -293,17 +287,13 @@ Contributions welcome! Please:
 
 ## License
 
-Apache 2.0
+MIT
 
 ## FAQ
 
 ### Q: How is this different from loading MCP servers directly into Claude Code?
 
 **A**: Claude Code can load MCP servers directly, but this puts all tool definitions in context (using tokens). MCPSkill wraps MCP servers in a skill that Claude auto-invokes only when needed, keeping your context clean.
-
-### Q: Can I use this with Claude Desktop?
-
-**A**: No, MCPSkill is specifically designed for Claude Code's skill system. For Claude Desktop, use the full MCProxy package with MCP server mode.
 
 ### Q: Do I need an API key for orchestration?
 
